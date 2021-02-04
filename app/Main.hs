@@ -25,8 +25,15 @@ appLoop renderer = do
           _ -> False
       qPressed = any eventIsQPress events
 
-  rendererDrawColor renderer $= V4 0 0 255 255
+  -- Background color
+  rendererDrawColor renderer $= V4 0 0 0 255
   clear renderer
+
+  -- Rectangle color
+  rendererDrawColor renderer $= V4 255 255 255 255
+  let rect = Rectangle (P $ V2 30 40) (V2 100 200)
+  drawRect renderer $ Just rect
+
   present renderer
 
   unless qPressed (appLoop renderer)
