@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:sdl-game"
+
+    - path: "app/Main.hs"
+      component: "sdl-game:exe:sdl-game"
+
+    - path: "test"
+      component: "sdl-game:test:sdl-game-test"
